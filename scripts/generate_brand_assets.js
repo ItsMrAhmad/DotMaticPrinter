@@ -1,0 +1,196 @@
+const fs = require('fs');
+const path = require('path');
+const sharp = require('C:/Users/Master/TechsistLabs/node_modules/sharp');
+
+const publicDir = 'C:\\Users\\Master\\dotmatic-printer\\public';
+const brandDir = path.join(publicDir, 'brand');
+
+if (!fs.existsSync(brandDir)) {
+  fs.mkdirSync(brandDir, { recursive: true });
+}
+
+// 1. Master Circular Logo SVG (500x500)
+function getMasterLogoSvg({ transparent = false } = {}) {
+  const bg = transparent ? '' : `<circle cx="250" cy="250" r="248" fill="#FFFFFF"/>`;
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <style>
+      .condensed-title {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-weight: 900;
+        text-anchor: middle;
+        fill: #111827;
+      }
+    </style>
+  </defs>
+
+  ${bg}
+  <!-- Outer Circular Ring -->
+  <circle cx="250" cy="250" r="236" fill="none" stroke="#111827" stroke-width="9"/>
+
+  <!-- Centered dm Monogram -->
+  <g id="dm-monogram" transform="translate(250, 215) scale(0.72) translate(-250, -220)">
+    
+    <!-- LETTER 'd' in Royal Blue (#2D3092) -->
+    <path d="M 175 65
+             L 218 65
+             L 218 305
+             L 175 305
+             L 175 272
+             C 158 298 128 312 92 312
+             C 42 312 8 272 8 222
+             C 8 172 42 132 92 132
+             C 128 132 158 146 175 172
+             Z
+             M 175 222
+             C 175 186 150 162 114 162
+             C 78 162 52 186 52 222
+             C 52 258 78 282 114 282
+             C 150 282 175 258 175 222
+             Z" 
+          fill="#2D3092"/>
+
+    <!-- DOT MATRIX STAIRCASE -->
+    <rect x="175" y="67" width="19" height="19" fill="#2D3092"/>
+    <rect x="198" y="67" width="19" height="19" fill="#2D3092"/>
+    <rect x="175" y="44" width="19" height="19" fill="#2D3092"/>
+    <rect x="198" y="44" width="19" height="19" fill="#2D3092"/>
+    <rect x="198" y="21" width="19" height="19" fill="#2D3092"/>
+    <rect x="221" y="21" width="19" height="19" fill="#F88521"/>
+    <rect x="221" y="-2" width="19" height="19" fill="#F88521"/>
+    <rect x="244" y="-2" width="19" height="19" fill="#F88521"/>
+    <rect x="244" y="-25" width="19" height="19" fill="#F88521"/>
+
+    <!-- LETTER 'm' in Electric Orange (#F88521) -->
+    <path d="M 224 185
+             C 240 152 272 132 308 132
+             C 342 132 368 152 380 182
+             C 396 150 428 132 464 132
+             C 506 132 530 162 530 210
+             L 530 305
+             L 488 305
+             L 488 218
+             C 488 190 474 172 448 172
+             C 422 172 406 190 406 218
+             L 406 305
+             L 364 305
+             L 364 218
+             C 364 190 350 172 324 172
+             C 298 172 282 190 282 218
+             L 282 305
+             L 240 305
+             L 240 214
+             C 240 198 232 188 224 185
+             Z" 
+          fill="#F88521"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="250" y="372" class="condensed-title" font-size="46" letter-spacing="3">DOT MATIC</text>
+  <text x="250" y="422" class="condensed-title" font-size="46" letter-spacing="5">PRINTER</text>
+</svg>`;
+}
+
+// 2. Favicon SVG (Focused on the iconic mark for maximum legibility at tiny sizes)
+function getFaviconSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <circle cx="50" cy="50" r="48" fill="#FFFFFF" stroke="#111827" stroke-width="4"/>
+  <g transform="translate(50, 52) scale(0.185) translate(-270, -180)">
+    <!-- 'd' in Royal Blue -->
+    <path d="M 175 65 L 218 65 L 218 305 L 175 305 L 175 272 C 158 298 128 312 92 312 C 42 312 8 272 8 222 C 8 172 42 132 92 132 C 128 132 158 146 175 172 Z M 175 222 C 175 186 150 162 114 162 C 78 162 52 186 52 222 C 52 258 78 282 114 282 C 150 282 175 258 175 222 Z" fill="#2D3092"/>
+    <!-- dot matrix blocks -->
+    <rect x="175" y="67" width="19" height="19" fill="#2D3092"/>
+    <rect x="198" y="67" width="19" height="19" fill="#2D3092"/>
+    <rect x="175" y="44" width="19" height="19" fill="#2D3092"/>
+    <rect x="198" y="44" width="19" height="19" fill="#2D3092"/>
+    <rect x="198" y="21" width="19" height="19" fill="#2D3092"/>
+    <rect x="221" y="21" width="19" height="19" fill="#F88521"/>
+    <rect x="221" y="-2" width="19" height="19" fill="#F88521"/>
+    <rect x="244" y="-2" width="19" height="19" fill="#F88521"/>
+    <rect x="244" y="-25" width="19" height="19" fill="#F88521"/>
+    <!-- 'm' in Orange -->
+    <path d="M 224 185 C 240 152 272 132 308 132 C 342 132 368 152 380 182 C 396 150 428 132 464 132 C 506 132 530 162 530 210 L 530 305 L 488 305 L 488 218 C 488 190 474 172 448 172 C 422 172 406 190 406 218 L 406 305 L 364 305 L 364 218 C 364 190 350 172 324 172 C 298 172 282 190 282 218 L 282 305 L 240 305 L 240 214 C 240 198 232 188 224 185 Z" fill="#F88521"/>
+  </g>
+</svg>`;
+}
+
+// 3. Horizontal Logo SVG for Navbar (Width: 320, Height: 70)
+function getHorizontalLogoSvg() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 70" width="340" height="70">
+  <defs>
+    <style>
+      .nav-title {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-weight: 900;
+        fill: #111827;
+      }
+      .nav-sub {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-weight: 700;
+        fill: #F88521;
+        letter-spacing: 3px;
+      }
+    </style>
+  </defs>
+
+  <!-- Circular Badge on Left -->
+  <g transform="translate(35, 35) scale(0.13) translate(-250, -250)">
+    <circle cx="250" cy="250" r="246" fill="#FFFFFF"/>
+    <circle cx="250" cy="250" r="236" fill="none" stroke="#111827" stroke-width="12"/>
+    <g transform="translate(250, 215) scale(0.72) translate(-250, -220)">
+      <path d="M 175 65 L 218 65 L 218 305 L 175 305 L 175 272 C 158 298 128 312 92 312 C 42 312 8 272 8 222 C 8 172 42 132 92 132 C 128 132 158 146 175 172 Z M 175 222 C 175 186 150 162 114 162 C 78 162 52 186 52 222 C 52 258 78 282 114 282 C 150 282 175 258 175 222 Z" fill="#2D3092"/>
+      <rect x="175" y="67" width="19" height="19" fill="#2D3092"/>
+      <rect x="198" y="67" width="19" height="19" fill="#2D3092"/>
+      <rect x="175" y="44" width="19" height="19" fill="#2D3092"/>
+      <rect x="198" y="44" width="19" height="19" fill="#2D3092"/>
+      <rect x="198" y="21" width="19" height="19" fill="#2D3092"/>
+      <rect x="221" y="21" width="19" height="19" fill="#F88521"/>
+      <rect x="221" y="-2" width="19" height="19" fill="#F88521"/>
+      <rect x="244" y="-2" width="19" height="19" fill="#F88521"/>
+      <rect x="244" y="-25" width="19" height="19" fill="#F88521"/>
+      <path d="M 224 185 C 240 152 272 132 308 132 C 342 132 368 152 380 182 C 396 150 428 132 464 132 C 506 132 530 162 530 210 L 530 305 L 488 305 L 488 218 C 488 190 474 172 448 172 C 422 172 406 190 406 218 L 406 305 L 364 305 L 364 218 C 364 190 350 172 324 172 C 298 172 282 190 282 218 L 282 305 L 240 305 L 240 214 C 240 198 232 188 224 185 Z" fill="#F88521"/>
+    </g>
+    <text x="250" y="372" font-family="-apple-system, sans-serif" font-weight="900" font-size="46" letter-spacing="3" text-anchor="middle" fill="#111827">DOT MATIC</text>
+    <text x="250" y="422" font-family="-apple-system, sans-serif" font-weight="900" font-size="46" letter-spacing="5" text-anchor="middle" fill="#111827">PRINTER</text>
+  </g>
+
+  <!-- Typography Right Side -->
+  <text x="80" y="36" class="nav-title" font-size="24" letter-spacing="1">DOT MATIC</text>
+  <text x="80" y="56" class="nav-sub" font-size="13">PRINTER &amp; PACKAGING</text>
+</svg>`;
+}
+
+async function run() {
+  const masterSvg = getMasterLogoSvg({ transparent: false });
+  const masterSvgTrans = getMasterLogoSvg({ transparent: true });
+  const faviconSvg = getFaviconSvg();
+  const horizSvg = getHorizontalLogoSvg();
+
+  // Write SVGs
+  fs.writeFileSync(path.join(brandDir, 'logo.svg'), masterSvg);
+  fs.writeFileSync(path.join(brandDir, 'logo-transparent.svg'), masterSvgTrans);
+  fs.writeFileSync(path.join(brandDir, 'logo-horizontal.svg'), horizSvg);
+  fs.writeFileSync(path.join(publicDir, 'favicon.svg'), faviconSvg);
+
+  // Render high-res PNGs with sharp
+  const masterBuffer = Buffer.from(masterSvg);
+  const faviconBuffer = Buffer.from(faviconSvg);
+
+  await sharp(masterBuffer).resize(1024, 1024).png().toFile(path.join(brandDir, 'logo-1024.png'));
+  await sharp(masterBuffer).resize(512, 512).png().toFile(path.join(brandDir, 'logo-512.png'));
+  await sharp(masterBuffer).resize(512, 512).png().toFile(path.join(publicDir, 'icon-512.png'));
+  await sharp(masterBuffer).resize(192, 192).png().toFile(path.join(publicDir, 'icon-192.png'));
+  await sharp(faviconBuffer).resize(180, 180).png().toFile(path.join(publicDir, 'apple-touch-icon.png'));
+  await sharp(faviconBuffer).resize(32, 32).png().toFile(path.join(publicDir, 'favicon-32x32.png'));
+  await sharp(faviconBuffer).resize(16, 16).png().toFile(path.join(publicDir, 'favicon-16x16.png'));
+
+  // Also write favicon.ico directly using 32x32 png
+  fs.copyFileSync(path.join(publicDir, 'favicon-32x32.png'), path.join(publicDir, 'favicon.ico'));
+
+  console.log('Successfully generated all brand and favicon assets!');
+}
+
+run().catch(console.error);

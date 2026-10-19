@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <style>
+      .condensed-title {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-weight: 900;
+        text-anchor: middle;
+        fill: #111827;
+      }
+    </style>
+  </defs>
+
+  
+  <!-- Outer Circular Ring -->
+  <circle cx="250" cy="250" r="236" fill="none" stroke="#111827" stroke-width="9"/>
+
+  <!-- Centered dm Monogram -->
+  <g id="dm-monogram" transform="translate(250, 215) scale(0.72) translate(-250, -220)">
+    
+    <!-- LETTER 'd' in Royal Blue (#2D3092) -->
+    <path d="M 175 65
+             L 218 65
+             L 218 305
+             L 175 305
+             L 175 272
+             C 158 298 128 312 92 312
+             C 42 312 8 272 8 222
+             C 8 172 42 132 92 132
+             C 128 132 158 146 175 172
+             Z
+             M 175 222
+             C 175 186 150 162 114 162
+             C 78 162 52 186 52 222
+             C 52 258 78 282 114 282
+             C 150 282 175 258 175 222
+             Z" 
+          fill="#2D3092"/>
+
+    <!-- DOT MATRIX STAIRCASE -->
+    <rect x="175" y="67" width="19" height="19" fill="#2D3092"/>
+    <rect x="198" y="67" width="19" height="19" fill="#2D3092"/>
+    <rect x="175" y="44" width="19" height="19" fill="#2D3092"/>
+    <rect x="198" y="44" width="19" height="19" fill="#2D3092"/>
+    <rect x="198" y="21" width="19" height="19" fill="#2D3092"/>
+    <rect x="221" y="21" width="19" height="19" fill="#F88521"/>
+    <rect x="221" y="-2" width="19" height="19" fill="#F88521"/>
+    <rect x="244" y="-2" width="19" height="19" fill="#F88521"/>
+    <rect x="244" y="-25" width="19" height="19" fill="#F88521"/>
+
+    <!-- LETTER 'm' in Electric Orange (#F88521) -->
+    <path d="M 224 185
+             C 240 152 272 132 308 132
+             C 342 132 368 152 380 182
+             C 396 150 428 132 464 132
+             C 506 132 530 162 530 210
+             L 530 305
+             L 488 305
+             L 488 218
+             C 488 190 474 172 448 172
+             C 422 172 406 190 406 218
+             L 406 305
+             L 364 305
+             L 364 218
+             C 364 190 350 172 324 172
+             C 298 172 282 190 282 218
+             L 282 305
+             L 240 305
+             L 240 214
+             C 240 198 232 188 224 185
+             Z" 
+          fill="#F88521"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="250" y="372" class="condensed-title" font-size="46" letter-spacing="3">DOT MATIC</text>
+  <text x="250" y="422" class="condensed-title" font-size="46" letter-spacing="5">PRINTER</text>
+</svg>
