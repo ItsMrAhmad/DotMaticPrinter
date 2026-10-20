@@ -29,8 +29,9 @@ export default function Footer({ onSelectCategory }: FooterProps) {
                 <Image
                   src="/brand/logo.svg"
                   alt="Dot Matic Printer Logo"
-                  fill
-                  className="object-contain"
+                  width={48}
+                  height={48}
+                  className="w-10 h-10 object-contain mx-auto"
                 />
               </div>
               <div className="flex flex-col">

@@ -126,12 +126,13 @@ export default function Header({
       <div className="max-w-7xl mx-auto px-4 py-3 sm:py-4 flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-3 shrink-0 group">
-          <div className="relative w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-105">
+          <div className="relative w-12 h-12 sm:w-14 sm:h-14 shrink-0 transition-transform group-hover:scale-105">
             <Image
               src="/brand/logo.svg"
               alt="Dot Matic Printer Logo"
-              fill
-              className="object-contain"
+              width={56}
+              height={56}
+              className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
               priority
             />
           </div>
