@@ -27,21 +27,21 @@ export default function InstaHero({ onSelectCategory, onOpenProduct }: InstaHero
       title: "Personalized Drinkware",
       bg: "bg-[#F3EFE0]",
       buttonText: "Shop",
-      image: "/images/hero-sub-drinkware.jpg",
+      image: "/images/hero-sub-drinkware.png",
       productName: "Personalized Drinkware & Ceramic Mugs",
     },
     {
       title: "Merch that Matters",
       bg: "bg-[#F8ECE8]",
       buttonText: "Shop",
-      image: "/images/hero-sub-merch.jpg",
+      image: "/images/hero-sub-merch.png",
       productName: "Custom Printed Apparel & Corporate Merch",
     },
     {
       title: "Launch your new business",
       bg: "bg-[#E2EDF3]",
       buttonText: "Shop",
-      image: "/images/hero-sub-business.jpg",
+      image: "/images/hero-sub-business.png",
       productName: "Eco-Friendly Branded Tote Bags",
     },
   ];
@@ -129,9 +129,6 @@ export default function InstaHero({ onSelectCategory, onOpenProduct }: InstaHero
 
               {/* Text & CTA Overlay */}
               <div className="relative z-10 p-6 sm:p-10 md:p-14 max-w-lg">
-                <span className="text-xs sm:text-sm font-semibold text-slate-800 tracking-wide block mb-1">
-                  Special Weekly
-                </span>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-950 tracking-tight leading-[1.1] mb-6">
                   You think We Create
                 </h1>
