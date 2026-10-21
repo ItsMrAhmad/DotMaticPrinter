@@ -165,7 +165,15 @@ export default function Footer({ onSelectCategory }: FooterProps) {
               &copy; {new Date().getFullYear()} Dot Matic Printer. All rights reserved.
             </div>
             <div className="text-slate-400 text-[11px] font-medium">
-              Built by Techsist Labs
+              Built by{" "}
+              <a
+                href="https://techsistlabs.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-300 hover:text-[#F88521] hover:underline underline-offset-2 transition-colors cursor-pointer"
+              >
+                Techsist Labs
+              </a>
             </div>
           </div>
           <div className="flex items-center gap-3">
