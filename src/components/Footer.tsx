@@ -27,11 +27,11 @@ export default function Footer({ onSelectCategory }: FooterProps) {
             <Link href="/" className="flex items-center gap-3 group">
               <div className="relative w-12 h-12 bg-white rounded-2xl p-1 shrink-0">
                 <Image
-                  src="/brand/logo.svg"
+                  src="/brand/logo.png"
                   alt="Dot Matic Printer Logo"
                   width={48}
                   height={48}
-                  className="w-10 h-10 object-contain mx-auto"
+                  className="w-10 h-10 object-contain mx-auto rounded-md"
                 />
               </div>
               <div className="flex flex-col">

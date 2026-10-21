@@ -28,11 +28,11 @@ export default function AboutUsModal({ isOpen, onClose, onOpenAppointment }: Abo
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 relative bg-white rounded-xl p-1 shadow-xs border border-slate-200 flex items-center justify-center shrink-0">
               <Image
-                src="/brand/logo.svg"
+                src="/brand/logo.png"
                 alt="Dot Matic Printer Logo"
                 width={36}
                 height={36}
-                className="w-8 h-8 object-contain"
+                className="w-8 h-8 object-contain rounded-sm"
               />
             </div>
             <div>

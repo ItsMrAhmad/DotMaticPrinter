@@ -223,11 +223,11 @@ export default function Header({
         <Link href="/" className="flex items-center gap-3 shrink-0 group cursor-pointer">
           <div className="relative w-11 h-11 sm:w-13 sm:h-13 shrink-0 transition-transform group-hover:scale-105 active:scale-95">
             <Image
-              src="/brand/logo.svg"
+              src="/brand/logo.png"
               alt="Dot Matic Printer Logo"
               width={52}
               height={52}
-              className="w-11 h-11 sm:w-13 sm:h-13 object-contain"
+              className="w-11 h-11 sm:w-13 sm:h-13 object-contain rounded-md"
               priority
             />
           </div>
