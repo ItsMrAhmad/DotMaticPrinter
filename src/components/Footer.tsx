@@ -158,7 +158,7 @@ export default function Footer({ onSelectCategory }: FooterProps) {
           </div>
         </div>
 
-        {/* Bottom Copyright & Cloudflare Badge */}
+        {/* Bottom Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div className="space-y-0.5 text-center sm:text-left">
             <div>
@@ -175,12 +175,6 @@ export default function Footer({ onSelectCategory }: FooterProps) {
                 Techsist Labs
               </a>
             </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <span className="flex items-center gap-1.5 text-slate-400">
-              <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              Cloudflare High-Speed Edge Network
-            </span>
           </div>
         </div>
       </div>
