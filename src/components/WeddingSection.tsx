@@ -50,7 +50,7 @@ export default function WeddingSection({ onOpenProduct }: WeddingSectionProps) {
                   desc: item.desc,
                 })
               }
-              className="bg-[#F4F4F6] rounded-2xl p-3 sm:p-4 flex flex-col items-center justify-between text-center hover:bg-[#ECECF0] border border-slate-200/60 shadow-2xs hover:shadow-md transition-all duration-200 group cursor-pointer"
+              className="bg-[#F4F4F6] rounded-2xl p-3 sm:p-4 flex flex-col items-center justify-between text-center hover:bg-[#ECECF0] active:bg-blue-50/50 active:border-[#2D3092] active:scale-[0.98] border border-slate-200/60 shadow-2xs hover:shadow-md transition-all duration-200 group cursor-pointer"
             >
               {/* Inner White Image Container */}
               <div className="bg-white rounded-xl p-2 sm:p-3 w-full h-36 sm:h-40 flex items-center justify-center shadow-2xs group-hover:scale-102 transition-transform duration-200">

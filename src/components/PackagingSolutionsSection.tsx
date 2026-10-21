@@ -74,7 +74,7 @@ export default function PackagingSolutionsSection({ onOpenProduct }: PackagingSo
           {packagingItems.map((item, idx) => (
             <div
               key={idx}
-              className={`${item.bg} rounded-2xl p-5 sm:p-6 flex flex-col items-center justify-between text-center min-h-[380px] shadow-xs hover:shadow-xl transition-all duration-300 group`}
+              className={`${item.bg} rounded-2xl p-5 sm:p-6 flex flex-col items-center justify-between text-center min-h-[380px] shadow-xs hover:shadow-xl active:scale-[0.98] transition-all duration-300 group`}
             >
               {/* Top Tag Pill */}
               <div className="w-full flex justify-center">
@@ -112,7 +112,7 @@ export default function PackagingSolutionsSection({ onOpenProduct }: PackagingSo
 
                 <button
                   onClick={() => handleWhatsApp(item.title)}
-                  className="inline-flex items-center gap-1.5 bg-black hover:bg-slate-800 text-white px-6 py-2 rounded-full font-bold text-xs transition-all shadow-md active:scale-95"
+                  className="inline-flex items-center gap-1.5 bg-black hover:bg-slate-800 active:bg-[#F88521] text-white px-6 py-2 rounded-full font-bold text-xs transition-all shadow-md active:scale-95 cursor-pointer"
                 >
                   <span>Shop Now</span>
                   <ArrowRight className="w-3.5 h-3.5" />

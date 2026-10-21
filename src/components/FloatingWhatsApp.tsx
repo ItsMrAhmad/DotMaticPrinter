@@ -56,7 +56,7 @@ export default function FloatingWhatsApp() {
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="w-7 h-7 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition-colors"
+              className="w-7 h-7 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition-colors cursor-pointer active:scale-90"
               aria-label="Close chat"
             >
               <X className="w-4 h-4" />
@@ -79,7 +79,7 @@ export default function FloatingWhatsApp() {
                 <button
                   key={idx}
                   onClick={() => handleSendPrompt(q.text)}
-                  className="w-full text-left text-xs bg-white hover:bg-emerald-50 hover:border-emerald-300 hover:text-emerald-900 text-slate-700 font-medium px-3 py-2 rounded-xl border border-slate-200 transition-all flex items-center justify-between group shadow-2xs"
+                  className="w-full text-left text-xs bg-white hover:bg-emerald-50 hover:border-emerald-300 hover:text-emerald-900 active:bg-emerald-100 text-slate-700 font-medium px-3 py-2 rounded-xl border border-slate-200 transition-all flex items-center justify-between group shadow-2xs cursor-pointer active:scale-95"
                 >
                   <span>{q.label}</span>
                   <Send className="w-3 h-3 text-slate-400 group-hover:text-emerald-600 transition-colors" />
@@ -99,7 +99,7 @@ export default function FloatingWhatsApp() {
             />
             <button
               type="submit"
-              className="w-9 h-9 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center transition-transform active:scale-95 shrink-0"
+              className="w-9 h-9 rounded-full bg-[#25D366] hover:bg-[#20ba59] active:bg-[#128C7E] text-white flex items-center justify-center transition-all active:scale-90 cursor-pointer shrink-0"
               aria-label="Send WhatsApp message"
             >
               <Send className="w-4 h-4" />
@@ -115,7 +115,7 @@ export default function FloatingWhatsApp() {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="relative flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20ba59] text-white px-4 py-3.5 rounded-full shadow-2xl hover:shadow-emerald-500/40 transition-all duration-300 hover:scale-105 active:scale-95"
+          className="relative flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20ba59] active:bg-[#128C7E] text-white px-4 py-3.5 rounded-full shadow-2xl hover:shadow-emerald-500/40 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
           aria-label="Chat on WhatsApp"
         >
           <MessageCircle className="w-6 h-6 fill-white" />

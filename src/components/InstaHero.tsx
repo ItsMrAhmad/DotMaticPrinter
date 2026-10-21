@@ -77,7 +77,7 @@ export default function InstaHero({ onSelectCategory, onOpenProduct }: InstaHero
                           category: "Top Categories",
                         })
                       }
-                      className="p-2 rounded-xl hover:bg-slate-50 transition-colors flex flex-col items-center justify-center text-center group border border-slate-100 hover:border-slate-300"
+                      className="p-2 rounded-xl hover:bg-slate-50 active:bg-blue-50 active:scale-95 transition-all flex flex-col items-center justify-center text-center group border border-slate-100 hover:border-slate-300 active:border-[#2D3092] cursor-pointer"
                     >
                       <div className="w-14 h-14 relative flex items-center justify-center mb-1.5 transition-transform group-hover:scale-105">
                         <Image
@@ -103,7 +103,7 @@ export default function InstaHero({ onSelectCategory, onOpenProduct }: InstaHero
                     const el = document.getElementById("business-customers-section");
                     if (el) el.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="w-full bg-[#E5E7EB] hover:bg-[#D1D5DB] text-slate-900 font-bold text-xs sm:text-sm py-2.5 rounded-full transition-colors text-center"
+                  className="w-full bg-[#E5E7EB] hover:bg-slate-300 active:bg-[#2D3092] active:text-white text-slate-900 font-bold text-xs sm:text-sm py-2.5 rounded-full transition-all text-center cursor-pointer active:scale-95"
                 >
                   View All Categories
                 </button>
@@ -138,7 +138,7 @@ export default function InstaHero({ onSelectCategory, onOpenProduct }: InstaHero
 
                 <button
                   onClick={() => handleWhatsApp("You think We Create - Custom Print & Packaging")}
-                  className="inline-flex items-center gap-2 bg-black hover:bg-slate-800 text-white px-7 py-3 rounded-full font-bold text-sm transition-all shadow-md active:scale-95"
+                  className="inline-flex items-center gap-2 bg-black hover:bg-slate-800 active:bg-[#F88521] text-white px-7 py-3 rounded-full font-bold text-sm transition-all shadow-md active:scale-95 cursor-pointer"
                 >
                   <span>Shop Now</span>
                   <ArrowRight className="w-4 h-4" />
@@ -159,7 +159,7 @@ export default function InstaHero({ onSelectCategory, onOpenProduct }: InstaHero
                     </h4>
                     <button
                       onClick={() => handleWhatsApp(card.productName)}
-                      className="bg-black hover:bg-slate-800 text-white px-5 py-1.5 rounded-full font-bold text-xs transition-all active:scale-95"
+                      className="bg-black hover:bg-slate-800 active:bg-[#F88521] text-white px-5 py-1.5 rounded-full font-bold text-xs transition-all active:scale-95 cursor-pointer"
                     >
                       {card.buttonText}
                     </button>

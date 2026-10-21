@@ -52,7 +52,7 @@ export default function BusinessCustomersSection({ onOpenProduct }: BusinessCust
                   desc: item.desc,
                 })
               }
-              className="bg-white rounded-2xl border border-slate-200/90 p-5 sm:p-7 flex flex-col items-center justify-between text-center shadow-2xs hover:shadow-lg hover:border-slate-300 transition-all duration-300 group cursor-pointer relative overflow-hidden"
+              className="bg-white rounded-2xl border border-slate-200/90 p-5 sm:p-7 flex flex-col items-center justify-between text-center shadow-2xs hover:shadow-lg hover:border-slate-300 active:border-[#2D3092] active:scale-[0.98] transition-all duration-200 group cursor-pointer relative overflow-hidden"
             >
               {/* Image Container */}
               <div className="w-full h-36 sm:h-44 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-105">
@@ -73,7 +73,7 @@ export default function BusinessCustomersSection({ onOpenProduct }: BusinessCust
 
                 <span
                   title="Inquire on WhatsApp"
-                  className="w-8 h-8 rounded-full bg-emerald-50 group-hover:bg-[#25D366] text-[#25D366] group-hover:text-white flex items-center justify-center transition-colors shadow-2xs"
+                  className="w-8 h-8 rounded-full bg-emerald-50 group-hover:bg-[#25D366] group-hover:text-white text-[#25D366] active:bg-[#128C7E] active:scale-90 flex items-center justify-center transition-all shadow-2xs"
                 >
                   <MessageCircle className="w-4 h-4 fill-current" />
                 </span>

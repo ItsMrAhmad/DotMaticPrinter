@@ -9,17 +9,22 @@ import BusinessCustomersSection from "@/components/BusinessCustomersSection";
 import PackagingSolutionsSection from "@/components/PackagingSolutionsSection";
 import WeddingSection from "@/components/WeddingSection";
 import InstaProductModal, { ModalProduct } from "@/components/InstaProductModal";
-import { Product } from "@/data/products";
+import AboutUsModal from "@/components/AboutUsModal";
+import AppointmentModal from "@/components/AppointmentModal";
 
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [selectedProduct, setSelectedProduct] = useState<ModalProduct | null>(null);
+  const [isAboutOpen, setIsAboutOpen] = useState<boolean>(false);
+  const [isAppointmentOpen, setIsAppointmentOpen] = useState<boolean>(false);
 
   const handleSelectCategory = (catId: string) => {
     setActiveCategory(catId);
-    // Smooth scroll to relevant section
     if (catId === "packaging") {
       const el = document.getElementById("packaging-solutions-section");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else if (catId === "wedding") {
+      const el = document.getElementById("wedding-section");
       if (el) el.scrollIntoView({ behavior: "smooth" });
     } else {
       const el = document.getElementById("business-customers-section");
@@ -27,22 +32,15 @@ export default function Home() {
     }
   };
 
-  const handleOpenLegacyProduct = (p: Product) => {
-    setSelectedProduct({
-      title: p.title,
-      image: "/images/cat-business-cards.jpg",
-      category: p.category,
-      desc: p.description,
-    });
-  };
-
   return (
     <main className="min-h-screen flex flex-col bg-white selection:bg-[#F88521] selection:text-white">
-      {/* 1. HEADER (Kept as is) */}
+      {/* 1. HEADER (With replica navigations, sub-navigation dropdowns, search & WhatsApp) */}
       <Header
         activeCategory={activeCategory}
         onSelectCategory={handleSelectCategory}
-        onOpenProductModal={handleOpenLegacyProduct}
+        onOpenProductModal={(p) => setSelectedProduct(p)}
+        onOpenAbout={() => setIsAboutOpen(true)}
+        onOpenAppointment={() => setIsAppointmentOpen(true)}
       />
 
       {/* 2. SECTION 1: HERO (Image 1 - Top Categories Sidebar + 'You think We Create' + 3 Sub-Cards) */}
@@ -66,7 +64,7 @@ export default function Home() {
         onOpenProduct={(item) => setSelectedProduct(item)}
       />
 
-      {/* 6. FOOTER (Kept as is) */}
+      {/* 6. FOOTER */}
       <Footer onSelectCategory={handleSelectCategory} />
 
       {/* 7. FLOATING WHATSAPP (Bottom-Right Corner) */}
@@ -76,6 +74,19 @@ export default function Home() {
       <InstaProductModal
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
+      />
+
+      {/* 9. ABOUT US MODAL */}
+      <AboutUsModal
+        isOpen={isAboutOpen}
+        onClose={() => setIsAboutOpen(false)}
+        onOpenAppointment={() => setIsAppointmentOpen(true)}
+      />
+
+      {/* 10. APPOINTMENT BOOKING MODAL */}
+      <AppointmentModal
+        isOpen={isAppointmentOpen}
+        onClose={() => setIsAppointmentOpen(false)}
       />
     </main>
   );

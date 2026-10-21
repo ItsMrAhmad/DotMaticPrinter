@@ -17,7 +17,7 @@ interface FooterProps {
 
 export default function Footer({ onSelectCategory }: FooterProps) {
   return (
-    <footer className="bg-[#0B1120] text-slate-300 pt-16 pb-10 border-t border-slate-800">
+    <footer id="about-us" className="bg-[#0B1120] text-slate-300 pt-16 pb-10 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4">
         {/* Top 4-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
@@ -160,8 +160,13 @@ export default function Footer({ onSelectCategory }: FooterProps) {
 
         {/* Bottom Copyright & Cloudflare Badge */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <div>
-            &copy; {new Date().getFullYear()} {BUSINESS_INFO.name} ({BUSINESS_INFO.domain}). All rights reserved.
+          <div className="space-y-0.5 text-center sm:text-left">
+            <div>
+              &copy; {new Date().getFullYear()} Dot Matic Printer. All rights reserved.
+            </div>
+            <div className="text-slate-400 text-[11px] font-medium">
+              Built by Techsist Labs
+            </div>
           </div>
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1.5 text-slate-400">
