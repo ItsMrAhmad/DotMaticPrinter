@@ -8,9 +8,10 @@ import { BUSINESS_INFO } from "@/data/products";
 interface InstaHeroProps {
   onSelectCategory: (name: string) => void;
   onOpenProduct: (product: { title: string; image: string; category: string }) => void;
+  onOpenAllCategories?: () => void;
 }
 
-export default function InstaHero({ onSelectCategory, onOpenProduct }: InstaHeroProps) {
+export default function InstaHero({ onSelectCategory, onOpenProduct, onOpenAllCategories }: InstaHeroProps) {
   const topCategories = [
     { title: "Business Cards", image: "/images/cat-business-cards.jpg", linkText: "Business Cards" },
     { title: "Luxury Envelopes", image: "/images/cat-luxury-envelopes.jpg", linkText: "Envelopes" },
@@ -100,8 +101,12 @@ export default function InstaHero({ onSelectCategory, onOpenProduct }: InstaHero
               <div className="pt-4 mt-2">
                 <button
                   onClick={() => {
-                    const el = document.getElementById("business-customers-section");
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
+                    if (onOpenAllCategories) {
+                      onOpenAllCategories();
+                    } else {
+                      const el = document.getElementById("business-customers-section");
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                    }
                   }}
                   className="w-full bg-[#E5E7EB] hover:bg-slate-300 active:bg-[#2D3092] active:text-white text-slate-900 font-bold text-xs sm:text-sm py-2.5 rounded-full transition-all text-center cursor-pointer active:scale-95"
                 >

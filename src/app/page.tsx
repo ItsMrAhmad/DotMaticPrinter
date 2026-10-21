@@ -11,19 +11,21 @@ import WeddingSection from "@/components/WeddingSection";
 import InstaProductModal, { ModalProduct } from "@/components/InstaProductModal";
 import AboutUsModal from "@/components/AboutUsModal";
 import AppointmentModal from "@/components/AppointmentModal";
+import AllCategoriesModal from "@/components/AllCategoriesModal";
 
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [selectedProduct, setSelectedProduct] = useState<ModalProduct | null>(null);
   const [isAboutOpen, setIsAboutOpen] = useState<boolean>(false);
   const [isAppointmentOpen, setIsAppointmentOpen] = useState<boolean>(false);
+  const [isCategoriesModalOpen, setIsCategoriesModalOpen] = useState<boolean>(false);
 
   const handleSelectCategory = (catId: string) => {
     setActiveCategory(catId);
-    if (catId === "packaging") {
+    if (catId === "packaging" || catId === "packaging-solutions-section") {
       const el = document.getElementById("packaging-solutions-section");
       if (el) el.scrollIntoView({ behavior: "smooth" });
-    } else if (catId === "wedding") {
+    } else if (catId === "wedding" || catId === "wedding-section") {
       const el = document.getElementById("wedding-section");
       if (el) el.scrollIntoView({ behavior: "smooth" });
     } else {
@@ -47,6 +49,7 @@ export default function Home() {
       <InstaHero
         onSelectCategory={handleSelectCategory}
         onOpenProduct={(item) => setSelectedProduct(item)}
+        onOpenAllCategories={() => setIsCategoriesModalOpen(true)}
       />
 
       {/* 3. SECTION 2: FOR OUR BUSINESS CUSTOMERS (Image 2 - 12 Clean White Cards) */}
@@ -87,6 +90,14 @@ export default function Home() {
       <AppointmentModal
         isOpen={isAppointmentOpen}
         onClose={() => setIsAppointmentOpen(false)}
+      />
+
+      {/* 11. ALL CATEGORIES POPUP MODAL */}
+      <AllCategoriesModal
+        isOpen={isCategoriesModalOpen}
+        onClose={() => setIsCategoriesModalOpen(false)}
+        onSelectCategory={handleSelectCategory}
+        onOpenProduct={(item) => setSelectedProduct(item)}
       />
     </main>
   );
