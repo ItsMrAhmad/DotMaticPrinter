@@ -328,9 +328,6 @@ export default function AllCategoriesModal({
                           {catGroup.badge}
                         </span>
                       </div>
-                      <p className="text-xs text-slate-600 mt-0.5 max-w-xl">
-                        {catGroup.desc}
-                      </p>
                     </div>
                   </div>
 
@@ -361,11 +358,8 @@ export default function AllCategoriesModal({
                           className="object-contain max-h-20 sm:max-h-24 w-auto"
                         />
                       </div>
-                      <span className="text-xs font-bold text-slate-900 group-hover:text-[#F88521] transition-colors leading-tight line-clamp-1">
+                      <span className="text-xs font-bold text-slate-900 group-hover:text-[#F88521] transition-colors leading-tight">
                         {item.title}
-                      </span>
-                      <span className="text-[10px] text-slate-500 line-clamp-2 mt-1 leading-snug">
-                        {item.desc}
                       </span>
                     </div>
                   ))}
