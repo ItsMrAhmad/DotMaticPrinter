@@ -109,14 +109,6 @@ export default function Footer({ onSelectCategory }: FooterProps) {
                   </button>
                 </li>
               ))}
-              <li>
-                <a
-                  href="#quote-calculator"
-                  className="text-[#F88521] hover:underline font-semibold block pt-1"
-                >
-                  ⚡ Instant Quote Calculator
-                </a>
-              </li>
             </ul>
           </div>
 
