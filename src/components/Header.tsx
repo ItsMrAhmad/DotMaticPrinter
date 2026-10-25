@@ -21,37 +21,37 @@ import { BUSINESS_INFO, PRODUCTS, Product } from "@/data/products";
 
 export const NAV_SUB_ITEMS = {
   business: [
-    { title: "Pen", image: "/images/biz-pen.jpg", desc: "Custom branded metal & plastic promotional pens" },
-    { title: "Calendar", image: "/images/biz-calendar.png", desc: "Desktop easel & executive wall calendars" },
-    { title: "Notebook", image: "/images/biz-notebook.jpg", desc: "Hardcover executive diaries & customized notepads" },
-    { title: "Booklet", image: "/images/biz-booklet.jpg", desc: "Saddle-stitched corporate brochures & booklets" },
-    { title: "Wallet", image: "/images/biz-wallet.jpg", desc: "Leather corporate wallets & executive gift sets" },
-    { title: "Business Cards", image: "/images/biz-business-cards.jpg", desc: "Premium matte, velvet, spot UV & gold foil visiting cards" },
-    { title: "USB", image: "/images/biz-usb.png", desc: "Custom logo engraved swivel flash drives" },
-    { title: "Keychain", image: "/images/biz-keychain.jpg", desc: "Die-cast metallic & leather branded keychains" },
-    { title: "Cap", image: "/images/biz-cap.jpg", desc: "Embroidered & heat-transferred corporate baseball caps" },
-    { title: "Bottle", image: "/images/biz-bottle.jpg", desc: "Insulated stainless steel tumblers & water bottles" },
-    { title: "Envelope", image: "/images/biz-envelope.jpg", desc: "Standard DL, A5 & A4 peel-and-seal corporate envelopes" },
-    { title: "Paper Bag", image: "/images/biz-paper-bag.jpg", desc: "Custom kraft & luxury laminated shopping bags with rope handles" },
+    { title: "Pen", image: "/images/biz-pen.webp", desc: "Custom branded metal & plastic promotional pens" },
+    { title: "Calendar", image: "/images/biz-calendar.webp", desc: "Desktop easel & executive wall calendars" },
+    { title: "Notebook", image: "/images/biz-notebook.webp", desc: "Hardcover executive diaries & customized notepads" },
+    { title: "Booklet", image: "/images/biz-booklet.webp", desc: "Saddle-stitched corporate brochures & booklets" },
+    { title: "Wallet", image: "/images/biz-wallet.webp", desc: "Leather corporate wallets & executive gift sets" },
+    { title: "Business Cards", image: "/images/biz-business-cards.webp", desc: "Premium matte, velvet, spot UV & gold foil visiting cards" },
+    { title: "USB", image: "/images/biz-usb.webp", desc: "Custom logo engraved swivel flash drives" },
+    { title: "Keychain", image: "/images/biz-keychain.webp", desc: "Die-cast metallic & leather branded keychains" },
+    { title: "Cap", image: "/images/biz-cap.webp", desc: "Embroidered & heat-transferred corporate baseball caps" },
+    { title: "Bottle", image: "/images/biz-bottle.webp", desc: "Insulated stainless steel tumblers & water bottles" },
+    { title: "Envelope", image: "/images/biz-envelope.webp", desc: "Standard DL, A5 & A4 peel-and-seal corporate envelopes" },
+    { title: "Paper Bag", image: "/images/biz-paper-bag.webp", desc: "Custom kraft & luxury laminated shopping bags with rope handles" },
   ],
   wedding: [
-    { title: "Nikahnama", image: "/images/wed-nikahnama.jpg", desc: "Custom designed luxury printed Islamic Nikahnama certificates" },
-    { title: "Favor Bags", image: "/images/wed-favor-bags.jpg", desc: "Delicate wedding favor gift bags with satin ribbon handles" },
-    { title: "Wax Seals & Stamps", image: "/images/wed-wax-stamps.jpg", desc: "Custom engraved brass wax seal stamps with sealing wax beads" },
-    { title: "Acrylic Wedding Cards", image: "/images/wed-acrylic-cards.png", desc: "Crystal-clear transparent acrylic luxury wedding invitations" },
-    { title: "Budget Friendly Cards", image: "/images/wed-budget-cards.jpg", desc: "Affordable & elegant wedding invitation cards with envelopes" },
-    { title: "Premium Wedding Cards", image: "/images/wed-premium-cards.jpg", desc: "Hardbound luxury presentation wedding boxes with velvet linings" },
-    { title: "Menu Cards", image: "/images/wed-menu-cards.jpg", desc: "Dining table food & beverage wedding reception menu cards" },
-    { title: "Bid Boxes", image: "/images/wed-bid-boxes.jpg", desc: "Traditional floral & gold foiled bid distribution sweet boxes" },
-    { title: "Acrylic Boxes", image: "/images/wed-acrylic-boxes.jpg", desc: "Transparent luxury acrylic keepsake gift & jewelry boxes" },
-    { title: "E-cards", image: "/images/wed-ecards.jpg", desc: "Animated & digital mobile wedding invitations for WhatsApp sharing" },
+    { title: "Nikahnama", image: "/images/wed-nikahnama.webp", desc: "Custom designed luxury printed Islamic Nikahnama certificates" },
+    { title: "Favor Bags", image: "/images/wed-favor-bags.webp", desc: "Delicate wedding favor gift bags with satin ribbon handles" },
+    { title: "Wax Seals & Stamps", image: "/images/wed-wax-stamps.webp", desc: "Custom engraved brass wax seal stamps with sealing wax beads" },
+    { title: "Acrylic Wedding Cards", image: "/images/wed-acrylic-cards.webp", desc: "Crystal-clear transparent acrylic luxury wedding invitations" },
+    { title: "Budget Friendly Cards", image: "/images/wed-budget-cards.webp", desc: "Affordable & elegant wedding invitation cards with envelopes" },
+    { title: "Premium Wedding Cards", image: "/images/wed-premium-cards.webp", desc: "Hardbound luxury presentation wedding boxes with velvet linings" },
+    { title: "Menu Cards", image: "/images/wed-menu-cards.webp", desc: "Dining table food & beverage wedding reception menu cards" },
+    { title: "Bid Boxes", image: "/images/wed-bid-boxes.webp", desc: "Traditional floral & gold foiled bid distribution sweet boxes" },
+    { title: "Acrylic Boxes", image: "/images/wed-acrylic-boxes.webp", desc: "Transparent luxury acrylic keepsake gift & jewelry boxes" },
+    { title: "E-cards", image: "/images/wed-ecards.webp", desc: "Animated & digital mobile wedding invitations for WhatsApp sharing" },
   ],
   packaging: [
-    { title: "Corrugated Box", image: "/images/pkg-corrugated.jpg", desc: "Custom heavy-duty 3-ply corrugated mailer boxes with edge printing for e-commerce" },
-    { title: "Magnet Box", image: "/images/pkg-magnet-box.jpg", desc: "Luxury rigid chipboard presentation gift boxes with hidden magnetic closures" },
-    { title: "Shopping Bags", image: "/images/pkg-shopping-bags.jpg", desc: "Premium boutique kraft & art card paper shopping bags with rope handles" },
-    { title: "Labels", image: "/images/pkg-labels.jpg", desc: "Waterproof vinyl roll labels, bottle packaging stickers, and circular hang tags" },
-    { title: "Flyers", image: "/images/pkg-flyers.jpg", desc: "High-definition offset flyers, tri-fold brochures, and marketing collateral" },
+    { title: "Corrugated Box", image: "/images/pkg-corrugated.webp", desc: "Custom heavy-duty 3-ply corrugated mailer boxes with edge printing for e-commerce" },
+    { title: "Magnet Box", image: "/images/pkg-magnet-box.webp", desc: "Luxury rigid chipboard presentation gift boxes with hidden magnetic closures" },
+    { title: "Shopping Bags", image: "/images/pkg-shopping-bags.webp", desc: "Premium boutique kraft & art card paper shopping bags with rope handles" },
+    { title: "Labels", image: "/images/pkg-labels.webp", desc: "Waterproof vinyl roll labels, bottle packaging stickers, and circular hang tags" },
+    { title: "Flyers", image: "/images/pkg-flyers.webp", desc: "High-definition offset flyers, tri-fold brochures, and marketing collateral" },
   ],
 };
 
@@ -223,7 +223,7 @@ export default function Header({
         <Link href="/" className="flex items-center gap-3 shrink-0 group cursor-pointer">
           <div className="relative w-11 h-11 sm:w-13 sm:h-13 shrink-0 transition-transform group-hover:scale-105 active:scale-95">
             <Image
-              src="/brand/logo.png"
+              src="/brand/logo.svg"
               alt="Dot Matic Printer Logo"
               width={52}
               height={52}
@@ -280,7 +280,7 @@ export default function Header({
                       onClick={() => {
                         onOpenProductModal({
                           title: product.title,
-                          image: "/images/cat-business-cards.jpg",
+                          image: "/images/cat-business-cards.webp",
                           category: product.category,
                           desc: product.description,
                         });

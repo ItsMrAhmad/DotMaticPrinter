@@ -39,7 +39,7 @@ export default function FloatingWhatsApp() {
             <div className="flex items-center gap-3">
               <div className="relative w-10 h-10 rounded-full bg-white p-1 shrink-0">
                 <Image
-                  src="/brand/logo.png"
+                  src="/brand/logo.svg"
                   alt="Dot Matic Printer"
                   width={36}
                   height={36}

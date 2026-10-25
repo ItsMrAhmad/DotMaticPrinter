@@ -27,7 +27,7 @@ export default function Footer({ onSelectCategory }: FooterProps) {
             <Link href="/" className="flex items-center gap-3 group">
               <div className="relative w-12 h-12 bg-white rounded-2xl p-1 shrink-0">
                 <Image
-                  src="/brand/logo.png"
+                  src="/brand/logo.svg"
                   alt="Dot Matic Printer Logo"
                   width={48}
                   height={48}

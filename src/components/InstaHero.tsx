@@ -13,14 +13,14 @@ interface InstaHeroProps {
 
 export default function InstaHero({ onSelectCategory, onOpenProduct, onOpenAllCategories }: InstaHeroProps) {
   const topCategories = [
-    { title: "Business Cards", image: "/images/cat-business-cards.jpg", linkText: "Business Cards" },
-    { title: "Luxury Envelopes", image: "/images/cat-luxury-envelopes.jpg", linkText: "Envelopes" },
-    { title: "Stickers", image: "/images/cat-stickers.jpg", linkText: "Stickers" },
-    { title: "Corporate Boxes", image: "/images/cat-corporate-boxes.jpg", linkText: "Corporate Boxes" },
-    { title: "Wedding Cards", image: "/images/cat-wedding-cards.jpg", linkText: "Wedding Cards" },
-    { title: "Bid Boxes", image: "/images/cat-bid-boxes.jpg", linkText: "Bid Boxes" },
-    { title: "Mugs", image: "/images/cat-mugs.jpg", linkText: "Mugs" },
-    { title: "Polaroid", image: "/images/cat-polaroid.jpg", linkText: "Polaroid" },
+    { title: "Business Cards", image: "/images/cat-business-cards.webp", linkText: "Business Cards" },
+    { title: "Luxury Envelopes", image: "/images/cat-luxury-envelopes.webp", linkText: "Envelopes" },
+    { title: "Stickers", image: "/images/cat-stickers.webp", linkText: "Stickers" },
+    { title: "Corporate Boxes", image: "/images/cat-corporate-boxes.webp", linkText: "Corporate Boxes" },
+    { title: "Wedding Cards", image: "/images/cat-wedding-cards.webp", linkText: "Wedding Cards" },
+    { title: "Bid Boxes", image: "/images/cat-bid-boxes.webp", linkText: "Bid Boxes" },
+    { title: "Mugs", image: "/images/cat-mugs.webp", linkText: "Mugs" },
+    { title: "Polaroid", image: "/images/cat-polaroid.webp", linkText: "Polaroid" },
   ];
 
   const subBanners = [
@@ -28,21 +28,21 @@ export default function InstaHero({ onSelectCategory, onOpenProduct, onOpenAllCa
       title: "Personalized Drinkware",
       bg: "bg-[#F3EFE0]",
       buttonText: "Shop",
-      image: "/images/hero-sub-drinkware.png",
+      image: "/images/hero-sub-drinkware.webp",
       productName: "Personalized Drinkware & Ceramic Mugs",
     },
     {
       title: "Merch that Matters",
       bg: "bg-[#F8ECE8]",
       buttonText: "Shop",
-      image: "/images/hero-sub-merch.png",
+      image: "/images/hero-sub-merch.webp",
       productName: "Custom Printed Apparel & Corporate Merch",
     },
     {
       title: "Launch your new business",
       bg: "bg-[#E2EDF3]",
       buttonText: "Shop",
-      image: "/images/hero-sub-business.png",
+      image: "/images/hero-sub-business.webp",
       productName: "Eco-Friendly Branded Tote Bags",
     },
   ];
@@ -124,7 +124,7 @@ export default function InstaHero({ onSelectCategory, onOpenProduct, onOpenAllCa
               {/* Background Photo */}
               <div className="absolute inset-0">
                 <Image
-                  src="/images/hero-banner.jpg"
+                  src="/images/hero-banner.webp"
                   alt="You think We Create"
                   fill
                   className="object-cover object-center"

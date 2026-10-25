@@ -11,18 +11,18 @@ interface BusinessCustomersSectionProps {
 
 export default function BusinessCustomersSection({ onOpenProduct }: BusinessCustomersSectionProps) {
   const products = [
-    { title: "Pen", image: "/images/biz-pen.jpg", desc: "Custom branded metal & plastic promotional pens" },
-    { title: "Calendar", image: "/images/biz-calendar.png", desc: "Desktop easel & executive wall calendars" },
-    { title: "Notebook", image: "/images/biz-notebook.jpg", desc: "Hardcover executive diaries & customized notepads" },
-    { title: "Booklet", image: "/images/biz-booklet.jpg", desc: "Saddle-stitched corporate brochures & booklets" },
-    { title: "Wallet", image: "/images/biz-wallet.jpg", desc: "Leather corporate wallets & executive gift sets" },
-    { title: "Business Cards", image: "/images/biz-business-cards.jpg", desc: "Premium matte, velvet, spot UV & gold foil visiting cards" },
-    { title: "USB", image: "/images/biz-usb.png", desc: "Custom logo engraved swivel flash drives" },
-    { title: "Keychain", image: "/images/biz-keychain.jpg", desc: "Die-cast metallic & leather branded keychains" },
-    { title: "Cap", image: "/images/biz-cap.jpg", desc: "Embroidered & heat-transferred corporate baseball caps" },
-    { title: "Bottle", image: "/images/biz-bottle.jpg", desc: "Insulated stainless steel tumblers & water bottles" },
-    { title: "Envelope", image: "/images/biz-envelope.jpg", desc: "Standard DL, A5 & A4 peel-and-seal corporate envelopes" },
-    { title: "Paper Bag", image: "/images/biz-paper-bag.jpg", desc: "Custom kraft & luxury laminated shopping bags with rope handles" },
+    { title: "Pen", image: "/images/biz-pen.webp", desc: "Custom branded metal & plastic promotional pens" },
+    { title: "Calendar", image: "/images/biz-calendar.webp", desc: "Desktop easel & executive wall calendars" },
+    { title: "Notebook", image: "/images/biz-notebook.webp", desc: "Hardcover executive diaries & customized notepads" },
+    { title: "Booklet", image: "/images/biz-booklet.webp", desc: "Saddle-stitched corporate brochures & booklets" },
+    { title: "Wallet", image: "/images/biz-wallet.webp", desc: "Leather corporate wallets & executive gift sets" },
+    { title: "Business Cards", image: "/images/biz-business-cards.webp", desc: "Premium matte, velvet, spot UV & gold foil visiting cards" },
+    { title: "USB", image: "/images/biz-usb.webp", desc: "Custom logo engraved swivel flash drives" },
+    { title: "Keychain", image: "/images/biz-keychain.webp", desc: "Die-cast metallic & leather branded keychains" },
+    { title: "Cap", image: "/images/biz-cap.webp", desc: "Embroidered & heat-transferred corporate baseball caps" },
+    { title: "Bottle", image: "/images/biz-bottle.webp", desc: "Insulated stainless steel tumblers & water bottles" },
+    { title: "Envelope", image: "/images/biz-envelope.webp", desc: "Standard DL, A5 & A4 peel-and-seal corporate envelopes" },
+    { title: "Paper Bag", image: "/images/biz-paper-bag.webp", desc: "Custom kraft & luxury laminated shopping bags with rope handles" },
   ];
 
   return (

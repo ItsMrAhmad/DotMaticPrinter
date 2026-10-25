@@ -11,16 +11,16 @@ interface WeddingSectionProps {
 
 export default function WeddingSection({ onOpenProduct }: WeddingSectionProps) {
   const weddingItems = [
-    { title: "Nikahnama", image: "/images/wed-nikahnama.jpg", desc: "Custom designed luxury printed Islamic Nikahnama certificates" },
-    { title: "Favor Bags", image: "/images/wed-favor-bags.jpg", desc: "Delicate wedding favor gift bags with satin ribbon handles" },
-    { title: "Wax Stamps", image: "/images/wed-wax-stamps.jpg", desc: "Custom engraved brass wax seal stamps with sealing wax beads", hasArrow: true },
-    { title: "Acrylic Cards", image: "/images/wed-acrylic-cards.png", desc: "Crystal-clear transparent acrylic luxury wedding invitations" },
-    { title: "Budget Cards", image: "/images/wed-budget-cards.jpg", desc: "Affordable & elegant wedding invitation cards with envelopes" },
-    { title: "Premium Cards", image: "/images/wed-premium-cards.jpg", desc: "Hardbound luxury presentation wedding boxes with velvet linings" },
-    { title: "Menu Cards", image: "/images/wed-menu-cards.jpg", desc: "Dining table food & beverage wedding reception menu cards" },
-    { title: "Bid Boxes", image: "/images/wed-bid-boxes.jpg", desc: "Traditional floral & gold foiled bid distribution sweet boxes" },
-    { title: "Acrylic Boxes", image: "/images/wed-acrylic-boxes.jpg", desc: "Transparent luxury acrylic keepsake gift & jewelry boxes" },
-    { title: "E-cards", image: "/images/wed-ecards.jpg", desc: "Animated & digital mobile wedding invitations for WhatsApp sharing" },
+    { title: "Nikahnama", image: "/images/wed-nikahnama.webp", desc: "Custom designed luxury printed Islamic Nikahnama certificates" },
+    { title: "Favor Bags", image: "/images/wed-favor-bags.webp", desc: "Delicate wedding favor gift bags with satin ribbon handles" },
+    { title: "Wax Stamps", image: "/images/wed-wax-stamps.webp", desc: "Custom engraved brass wax seal stamps with sealing wax beads", hasArrow: true },
+    { title: "Acrylic Cards", image: "/images/wed-acrylic-cards.webp", desc: "Crystal-clear transparent acrylic luxury wedding invitations" },
+    { title: "Budget Cards", image: "/images/wed-budget-cards.webp", desc: "Affordable & elegant wedding invitation cards with envelopes" },
+    { title: "Premium Cards", image: "/images/wed-premium-cards.webp", desc: "Hardbound luxury presentation wedding boxes with velvet linings" },
+    { title: "Menu Cards", image: "/images/wed-menu-cards.webp", desc: "Dining table food & beverage wedding reception menu cards" },
+    { title: "Bid Boxes", image: "/images/wed-bid-boxes.webp", desc: "Traditional floral & gold foiled bid distribution sweet boxes" },
+    { title: "Acrylic Boxes", image: "/images/wed-acrylic-boxes.webp", desc: "Transparent luxury acrylic keepsake gift & jewelry boxes" },
+    { title: "E-cards", image: "/images/wed-ecards.webp", desc: "Animated & digital mobile wedding invitations for WhatsApp sharing" },
   ];
 
   return (
