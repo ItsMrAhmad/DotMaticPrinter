@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `https://${BUSINESS_INFO.domain}/`,
   },
+  verification: {
+    google: "_pZFzBDOIGkwYRIGtrhIT8mAOm9Z06NpN4hntGtndQ4",
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
