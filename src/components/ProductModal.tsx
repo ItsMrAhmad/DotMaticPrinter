@@ -88,22 +88,6 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
             </p>
           </div>
 
-          {/* Quick Specifications Strip */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs">
-            <div>
-              <span className="text-slate-400 block text-[10px] uppercase font-bold">Pricing</span>
-              <span className="font-black text-[#2D3092] text-sm">Custom Quote</span>
-            </div>
-            <div>
-              <span className="text-slate-400 block text-[10px] uppercase font-bold">Minimum Order (MOQ)</span>
-              <span className="font-black text-slate-900 text-sm">{product.moq}</span>
-            </div>
-            <div className="col-span-2 sm:col-span-1">
-              <span className="text-slate-400 block text-[10px] uppercase font-bold">Turnaround Time</span>
-              <span className="font-black text-emerald-600 text-sm">{product.turnaround}</span>
-            </div>
-          </div>
-
           {/* Key Product Features */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-2.5">

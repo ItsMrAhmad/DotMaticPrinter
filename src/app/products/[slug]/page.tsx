@@ -210,22 +210,6 @@ export default async function ProductDetailPage({
                 </p>
               </div>
 
-              {/* Key Commercial Metrics Strip */}
-              <div className="p-5 rounded-2xl bg-[#F8F9FA] border border-slate-200 grid grid-cols-3 gap-4 text-xs">
-                <div>
-                  <div className="text-slate-500">Pricing Model</div>
-                  <div className="text-base sm:text-lg font-black text-slate-900 mt-0.5">Custom Quote</div>
-                </div>
-                <div>
-                  <div className="text-slate-500">Minimum Quantity</div>
-                  <div className="text-base sm:text-lg font-black text-[#2D3092] mt-0.5">{product.moq}</div>
-                </div>
-                <div>
-                  <div className="text-slate-500">Standard Delivery</div>
-                  <div className="text-base sm:text-lg font-black text-emerald-700 mt-0.5">{product.turnaround}</div>
-                </div>
-              </div>
-
               {/* Features List */}
               <div className="space-y-3">
                 <h3 className="font-extrabold text-sm text-slate-900 uppercase tracking-wider">
