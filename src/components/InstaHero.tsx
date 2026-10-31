@@ -63,9 +63,9 @@ export default function InstaHero({ onSelectCategory, onOpenProduct, onOpenAllCa
           <div className="lg:col-span-3">
             <div className="bg-white rounded-2xl border border-slate-200/80 p-4 sm:p-5 shadow-xs h-full flex flex-col justify-between">
               <div>
-                <h3 className="font-extrabold text-slate-900 text-lg mb-4 tracking-tight">
+                <h2 className="font-extrabold text-slate-900 text-lg mb-4 tracking-tight">
                   Top Categories
-                </h3>
+                </h2>
 
                 <div className="grid grid-cols-2 gap-3">
                   {topCategories.map((cat, idx) => (
@@ -125,7 +125,7 @@ export default function InstaHero({ onSelectCategory, onOpenProduct, onOpenAllCa
               <div className="absolute inset-0">
                 <Image
                   src="/images/hero-banner.webp"
-                  alt="You think We Create"
+                  alt="Custom Printing & Packaging Solutions - Dot Matic Printer"
                   fill
                   className="object-cover object-center"
                   priority
@@ -134,12 +134,18 @@ export default function InstaHero({ onSelectCategory, onOpenProduct, onOpenAllCa
 
               {/* Text & CTA Overlay */}
               <div className="relative z-10 p-6 sm:p-10 md:p-14 max-w-lg">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-950 tracking-tight leading-[1.1] mb-6">
-                  You think We Create
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight leading-[1.15] mb-3">
+                  Custom Printing &amp; Packaging Solutions
+                  <span className="block text-lg sm:text-xl md:text-2xl font-bold text-slate-700 mt-1 sm:mt-2 tracking-normal">
+                    You Think, We Create
+                  </span>
                 </h1>
+                <p className="text-xs sm:text-sm text-slate-700 mb-5 max-w-sm hidden sm:block font-medium">
+                  Direct factory rates for custom corrugated boxes, rigid packaging &amp; corporate stationery delivered across Pakistan.
+                </p>
 
                 <button
-                  onClick={() => handleWhatsApp("You think We Create - Custom Print & Packaging")}
+                  onClick={() => handleWhatsApp("Custom Printing & Packaging Solutions")}
                   className="inline-flex items-center gap-2 bg-black hover:bg-slate-800 active:bg-[#F88521] text-white px-7 py-3 rounded-full font-bold text-sm transition-all shadow-md active:scale-95 cursor-pointer"
                 >
                   <span>Shop Now</span>

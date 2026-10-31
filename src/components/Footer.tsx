@@ -98,17 +98,36 @@ export default function Footer({ onSelectCategory }: FooterProps) {
             <ul className="space-y-2 text-xs">
               {CATEGORIES.map((cat) => (
                 <li key={cat.id}>
-                  <button
-                    onClick={() => {
-                      onSelectCategory(cat.id);
-                      window.scrollTo({ top: 500, behavior: "smooth" });
-                    }}
-                    className="text-slate-400 hover:text-[#F88521] transition-colors"
+                  <a
+                    href={
+                      cat.id === "packaging-boxes" || cat.id === "packaging"
+                        ? "#packaging-solutions-section"
+                        : cat.id === "wedding"
+                        ? "#wedding-section"
+                        : "#business-customers-section"
+                    }
+                    onClick={() => onSelectCategory(cat.id)}
+                    className="text-slate-400 hover:text-[#F88521] transition-colors inline-block"
                   >
                     {cat.name}
-                  </button>
+                  </a>
                 </li>
               ))}
+              <li className="pt-2 border-t border-slate-800">
+                <a href="#why-choose-us" className="text-slate-400 hover:text-[#F88521] transition-colors inline-block">
+                  Why Choose Us
+                </a>
+              </li>
+              <li>
+                <a href="#reviews-section" className="text-slate-400 hover:text-[#F88521] transition-colors inline-block">
+                  Client Reviews
+                </a>
+              </li>
+              <li>
+                <a href="#faq-section" className="text-slate-400 hover:text-[#F88521] transition-colors inline-block">
+                  Frequently Asked Questions
+                </a>
+              </li>
             </ul>
           </div>
 

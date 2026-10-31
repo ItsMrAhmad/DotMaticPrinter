@@ -26,7 +26,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="bg-slate-50 py-16 border-b border-slate-200">
+    <section id="why-choose-us" className="bg-slate-50 py-16 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="text-xs font-bold uppercase tracking-wider text-[#F88521] mb-1">

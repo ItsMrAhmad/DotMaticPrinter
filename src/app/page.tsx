@@ -8,6 +8,9 @@ import InstaHero from "@/components/InstaHero";
 import BusinessCustomersSection from "@/components/BusinessCustomersSection";
 import PackagingSolutionsSection from "@/components/PackagingSolutionsSection";
 import WeddingSection from "@/components/WeddingSection";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import ReviewsSection from "@/components/ReviewsSection";
+import FAQSection from "@/components/FAQSection";
 import InstaProductModal, { ModalProduct } from "@/components/InstaProductModal";
 import AboutUsModal from "@/components/AboutUsModal";
 import AppointmentModal from "@/components/AppointmentModal";
@@ -67,7 +70,16 @@ export default function Home() {
         onOpenProduct={(item) => setSelectedProduct(item)}
       />
 
-      {/* 6. FOOTER */}
+      {/* 6. SECTION 5: WHY CHOOSE US (Heidelberg Precision, Die-Cutting & Embellishments) */}
+      <WhyChooseUs />
+
+      {/* 7. SECTION 6: CLIENT REVIEWS (Social Proof from Lahore, Karachi & Islamabad) */}
+      <ReviewsSection />
+
+      {/* 8. SECTION 7: FAQS (Accordion with Turnaround, Pricing, Delivery) */}
+      <FAQSection />
+
+      {/* 9. FOOTER */}
       <Footer onSelectCategory={handleSelectCategory} />
 
       {/* 7. FLOATING WHATSAPP (Bottom-Right Corner) */}
