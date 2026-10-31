@@ -134,23 +134,40 @@ export default function InstaHero({ onSelectCategory, onOpenProduct, onOpenAllCa
 
               {/* Text & CTA Overlay */}
               <div className="relative z-10 p-6 sm:p-10 md:p-14 max-w-lg">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight leading-[1.15] mb-3">
-                  Custom Printing &amp; Packaging Solutions
-                  <span className="block text-lg sm:text-xl md:text-2xl font-bold text-slate-700 mt-1 sm:mt-2 tracking-normal">
-                    You Think, We Create
+                
+                {/* Semantic H1: Combines the high-intent keywords in the micro-pill with the bold display slogan */}
+                <h1 className="tracking-tight leading-[1.08] mb-4">
+                  <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-white text-[11px] font-bold uppercase tracking-widest mb-3.5 shadow-xs border border-white/10 block w-fit">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#F88521]"></span>
+                    Custom Packaging &amp; Print
+                  </span>
+                  <span className="block text-3xl sm:text-4xl md:text-5xl font-black text-slate-950">
+                    You Think,<br />
+                    <span className="text-slate-800 font-extrabold">We Create.</span>
                   </span>
                 </h1>
-                <p className="text-xs sm:text-sm text-slate-700 mb-5 max-w-sm hidden sm:block font-medium">
-                  Direct factory rates for custom corrugated boxes, rigid packaging &amp; corporate stationery delivered across Pakistan.
+
+                <p className="text-xs sm:text-sm text-slate-700/90 leading-relaxed mb-6 max-w-sm font-medium">
+                  Direct factory custom boxes, rigid packaging, stationery &amp; merchandise delivered across Pakistan.
                 </p>
 
-                <button
-                  onClick={() => handleWhatsApp("Custom Printing & Packaging Solutions")}
-                  className="inline-flex items-center gap-2 bg-black hover:bg-slate-800 active:bg-[#F88521] text-white px-7 py-3 rounded-full font-bold text-sm transition-all shadow-md active:scale-95 cursor-pointer"
-                >
-                  <span>Shop Now</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
+                <div className="flex flex-wrap items-center gap-3">
+                  <a
+                    href="#packaging-solutions-section"
+                    className="inline-flex items-center gap-2 bg-slate-950 hover:bg-slate-800 active:bg-[#F88521] text-white px-6 sm:px-7 py-3 rounded-full font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95 cursor-pointer"
+                  >
+                    <span>Explore Collection</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+
+                  <button
+                    onClick={() => handleWhatsApp("Custom Print & Packaging - Instant Quote")}
+                    className="inline-flex items-center gap-1.5 bg-white/85 hover:bg-white active:bg-slate-100 text-slate-900 px-5 py-3 rounded-full font-bold text-xs sm:text-sm transition-all shadow-xs border border-slate-300/70 active:scale-95 cursor-pointer"
+                  >
+                    <MessageCircle className="w-4 h-4 text-[#25D366] fill-[#25D366]" />
+                    <span>Instant Quote</span>
+                  </button>
+                </div>
               </div>
             </div>
 
