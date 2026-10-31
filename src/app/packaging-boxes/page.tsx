@@ -153,7 +153,7 @@ export default function PackagingBoxesPage() {
               >
                 <div>
                   {/* Image Container */}
-                  <div className="relative aspect-4/3 bg-slate-100 overflow-hidden p-6 flex items-center justify-center">
+                  <Link href={`/products/${p.slug}/`} className="relative aspect-4/3 bg-slate-100 overflow-hidden p-6 flex items-center justify-center block group">
                     <Image
                       src={
                         p.slug === "corrugated-mailer-boxes"
@@ -166,19 +166,19 @@ export default function PackagingBoxesPage() {
                       }
                       alt={p.title}
                       fill
-                      className="object-contain p-4 transition-transform hover:scale-105 duration-300"
+                      className="object-contain p-4 transition-transform group-hover:scale-105 duration-300"
                     />
                     {p.badge && (
                       <span className="absolute top-3 right-3 bg-[#2D3092] text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-xs">
                         {p.badge}
                       </span>
                     )}
-                  </div>
+                  </Link>
 
                   {/* Content Details */}
                   <div className="p-6">
-                    <h3 className="font-extrabold text-lg text-slate-900 tracking-tight mb-2">
-                      {p.title}
+                    <h3 className="font-extrabold text-lg text-slate-900 tracking-tight mb-2 hover:text-[#2D3092] transition-colors">
+                      <Link href={`/products/${p.slug}/`}>{p.title}</Link>
                     </h3>
                     <p className="text-xs text-slate-600 leading-relaxed mb-4">
                       {p.shortDesc}
@@ -203,17 +203,23 @@ export default function PackagingBoxesPage() {
                 </div>
 
                 {/* Card Footer CTA */}
-                <div className="p-6 pt-0">
+                <div className="p-6 pt-0 flex gap-2">
+                  <Link
+                    href={`/products/${p.slug}/`}
+                    className="flex-1 text-center bg-slate-100 hover:bg-slate-200 text-slate-800 py-2.5 rounded-2xl font-bold text-xs transition-all flex items-center justify-center"
+                  >
+                    View Specs
+                  </Link>
                   <a
                     href={`https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent(
                       `Hello Dot Matic Printer! I would like a quote for ${p.title}.`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 bg-slate-900 hover:bg-[#F88521] text-white py-3 rounded-2xl font-bold text-xs sm:text-sm transition-all shadow-xs cursor-pointer"
+                    className="flex-1 flex items-center justify-center gap-1.5 bg-slate-900 hover:bg-[#F88521] text-white py-2.5 rounded-2xl font-bold text-xs transition-all shadow-xs cursor-pointer"
                   >
-                    <MessageCircle className="w-4 h-4 fill-white" />
-                    <span>Inquire on WhatsApp</span>
+                    <MessageCircle className="w-3.5 h-3.5 fill-white" />
+                    <span>WhatsApp</span>
                   </a>
                 </div>
               </div>

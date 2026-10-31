@@ -1,12 +1,12 @@
 import type { MetadataRoute } from "next";
-import { BUSINESS_INFO } from "@/data/products";
+import { BUSINESS_INFO, PRODUCTS } from "@/data/products";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = `https://${BUSINESS_INFO.domain}`;
 
-  return [
+  const coreRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/`,
       lastModified: new Date(),
@@ -56,5 +56,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
   ];
-}
 
+  const productRoutes: MetadataRoute.Sitemap = PRODUCTS.map((p) => ({
+    url: `${baseUrl}/products/${p.slug}/`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  return [...coreRoutes, ...productRoutes];
+}

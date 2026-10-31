@@ -16,6 +16,30 @@ export interface Product {
   rating: number;
   reviewsCount: number;
   popular?: boolean;
+  image?: string;
+}
+
+export function getProductImage(slug: string): string {
+  const map: Record<string, string> = {
+    "corrugated-mailer-boxes": "/images/pkg-corrugated.webp",
+    "luxury-rigid-gift-boxes": "/images/pkg-magnet-box.webp",
+    "kraft-shopping-paper-bags": "/images/biz-paper-bag.webp",
+    "custom-cosmetic-perfume-boxes": "/images/cat-corporate-boxes.webp",
+    "food-cake-takeaway-boxes": "/images/wed-bid-boxes.webp",
+    "premium-visiting-cards": "/images/biz-business-cards.webp",
+    "executive-letterheads": "/images/biz-notebook.webp",
+    "presentation-folders": "/images/biz-booklet.webp",
+    "custom-printed-envelopes": "/images/biz-envelope.webp",
+    "carbonless-invoice-bill-books": "/images/cat-corporate-boxes.webp",
+    "promotional-flyers-brochures": "/images/pkg-flyers.webp",
+    "roll-up-standees-x-banners": "/images/hero-sub-business.webp",
+    "product-catalogs-booklets": "/images/biz-booklet.webp",
+    "custom-die-cut-vinyl-stickers": "/images/cat-stickers.webp",
+    "custom-product-roll-labels": "/images/pkg-labels.webp",
+    "custom-printed-ceramic-mugs": "/images/cat-mugs.webp",
+    "custom-metal-leather-keychains": "/images/biz-keychain.webp",
+  };
+  return map[slug] || "/images/pkg-corrugated.webp";
 }
 
 export interface Category {
