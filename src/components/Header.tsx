@@ -17,7 +17,8 @@ import {
   ArrowRight
 } from "lucide-react";
 import { InstagramIcon, FacebookIcon, YouTubeIcon, TikTokIcon } from "@/components/SocialIcons";
-import { BUSINESS_INFO, PRODUCTS, Product } from "@/data/products";
+import { BUSINESS_INFO, PRODUCTS, Product, getProductImage } from "@/data/products";
+import InstaProductModal, { ModalProduct } from "@/components/InstaProductModal";
 
 export const NAV_SUB_ITEMS = {
   business: [
@@ -75,6 +76,7 @@ export default function Header({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [localModalProduct, setLocalModalProduct] = useState<ModalProduct | null>(null);
 
   const searchRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLElement>(null);
@@ -124,19 +126,39 @@ export default function Header({
     setActiveDropdown(null);
     setMobileMenuOpen(false);
     
-    // Smooth scroll to section
+    // Smooth scroll to section if present on current page
     const el = document.getElementById(sectionId);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
 
-    // Open product modal
-    onOpenProductModal?.({
+    const slugMap: Record<string, string> = {
+      "Business Cards": "premium-visiting-cards",
+      "Envelope": "custom-printed-envelopes",
+      "Booklet": "product-catalogs-booklets",
+      "Paper Bag": "kraft-shopping-paper-bags",
+      "Shopping Bags": "kraft-shopping-paper-bags",
+      "Keychain": "custom-metal-leather-keychains",
+      "Corrugated Box": "corrugated-mailer-boxes",
+      "Magnet Box": "luxury-rigid-gift-boxes",
+      "Labels": "custom-product-roll-labels",
+      "Flyers": "promotional-flyers-brochures",
+      "Bid Boxes": "food-cake-takeaway-boxes",
+    };
+
+    const modalData: ModalProduct = {
       title: item.title,
       image: item.image,
       category: categoryName,
       desc: item.desc,
-    });
+      slug: slugMap[item.title],
+    };
+
+    // Always open local modal in Header so it works on every route
+    setLocalModalProduct(modalData);
+
+    // Also notify external listener if passed
+    onOpenProductModal?.(modalData);
   };
 
   const handleTopLevelNavClick = (sectionId: string) => {
@@ -275,29 +297,36 @@ export default function Header({
                     Found {searchResults.length} Products
                   </div>
                   {searchResults.map((product) => (
-                    <button
+                    <Link
                       key={product.id}
+                      href={`/products/${product.slug}/`}
                       onClick={() => {
-                        onOpenProductModal?.({
-                          title: product.title,
-                          image: "/images/cat-business-cards.webp",
-                          category: product.category,
-                          desc: product.description,
-                        });
                         setIsSearchOpen(false);
+                        setSearchQuery("");
                       }}
                       className="w-full text-left px-4 py-3 hover:bg-slate-50 active:bg-blue-50 flex items-center justify-between group transition-colors cursor-pointer"
                     >
-                      <div>
-                        <div className="font-semibold text-sm text-slate-900 group-hover:text-[#2D3092] transition-colors">
-                          {product.title}
+                      <div className="flex items-center gap-3">
+                        <div className="w-9 h-9 rounded-xl bg-slate-50 p-1 flex items-center justify-center shrink-0 border border-slate-200">
+                          <Image
+                            src={getProductImage(product.slug)}
+                            alt={product.title}
+                            width={32}
+                            height={32}
+                            className="object-contain max-h-7 max-w-7"
+                          />
                         </div>
-                        <div className="text-xs text-slate-500 mt-0.5">
-                          {product.category} • <span className="text-slate-500 font-medium">MOQ: {product.moq}</span>
+                        <div>
+                          <div className="font-semibold text-sm text-slate-900 group-hover:text-[#2D3092] transition-colors">
+                            {product.title}
+                          </div>
+                          <div className="text-xs text-slate-500 mt-0.5">
+                            {product.category} • <span className="text-slate-500 font-medium">MOQ: {product.moq}</span>
+                          </div>
                         </div>
                       </div>
                       <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-[#2D3092] group-hover:translate-x-1 transition-all" />
-                    </button>
+                    </Link>
                   ))}
                 </div>
               ) : (
@@ -673,6 +702,13 @@ export default function Header({
             </div>
           </div>
         </div>
+      )}
+      {/* Universal Product Quick Inquiry Modal */}
+      {localModalProduct && (
+        <InstaProductModal
+          product={localModalProduct}
+          onClose={() => setLocalModalProduct(null)}
+        />
       )}
     </header>
   );

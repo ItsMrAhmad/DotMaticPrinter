@@ -43,7 +43,6 @@ export default function Home() {
       <Header
         activeCategory={activeCategory}
         onSelectCategory={handleSelectCategory}
-        onOpenProductModal={(p) => setSelectedProduct(p)}
         onOpenAbout={() => setIsAboutOpen(true)}
         onOpenAppointment={() => setIsAppointmentOpen(true)}
       />

@@ -50,7 +50,7 @@ export default function PackagingSolutionsSection({ onOpenProduct }: PackagingSo
 
   const handleWhatsApp = (title: string) => {
     const url = `https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${encodeURIComponent(
-      `Hello Dot Matic Printer! I am interested in custom ${title} packaging solutions. Please share pricing and die-line templates.`
+      `Hello Dot Matic Printer! I am interested in custom ${title} packaging solutions. Please share quotation and die-line templates.`
     )}`;
     window.open(url, "_blank");
   };

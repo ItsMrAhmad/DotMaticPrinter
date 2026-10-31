@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { X, MessageCircle, Check, ArrowRight, Phone } from "lucide-react";
 import { BUSINESS_INFO } from "@/data/products";
@@ -10,6 +11,7 @@ export interface ModalProduct {
   image: string;
   category: string;
   desc?: string;
+  slug?: string;
 }
 
 interface InstaProductModalProps {
@@ -69,6 +71,18 @@ export default function InstaProductModal({ product, onClose }: InstaProductModa
               <h2 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight leading-snug">
                 {product.title}
               </h2>
+              {product.slug && (
+                <div className="mt-1.5">
+                  <Link
+                    href={`/products/${product.slug}/`}
+                    onClick={onClose}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#2D3092] hover:text-[#F88521] transition-colors group/link"
+                  >
+                    <span>View Full Product Specifications</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform" />
+                  </Link>
+                </div>
+              )}
               <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
                 {product.desc || "Custom offset & digital printing with premium finish options, die-cutting, and fast nationwide delivery."}
               </p>
