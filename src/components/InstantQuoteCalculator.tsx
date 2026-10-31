@@ -45,7 +45,7 @@ export default function InstantQuoteCalculator() {
     `• Material: ${material}\n` +
     `• Finish: ${finish}\n` +
     (notes ? `• Special Instructions: ${notes}\n` : "") +
-    `• Approx Estimate: Rs. ${totalEstimate.toLocaleString()} (Rs. ${unitRate}/pc)\n\n` +
+    `• Custom Quote Request\n\n` +
     `Please confirm final quotation and send die-line file template to my WhatsApp.`
   );
 
@@ -233,10 +233,10 @@ export default function InstantQuoteCalculator() {
                 Estimated Total (Excl. Tax)
               </div>
               <div className="text-2xl sm:text-3xl font-black text-[#F88521] mt-1">
-                Rs. {totalEstimate.toLocaleString()}
+                Custom Quote
               </div>
               <div className="text-[11px] text-slate-400 mt-0.5">
-                Approx. Rs. {unitRate} per piece
+                Factory direct rate upon inquiry
               </div>
             </div>
 

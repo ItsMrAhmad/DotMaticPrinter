@@ -178,7 +178,7 @@ export default function HeroBanner({ onExploreClick, onSelectCategory }: HeroBan
                     <div className="font-bold text-white group-hover:text-[#F88521] transition-colors">
                       Custom Boxes
                     </div>
-                    <div className="text-[10px] text-slate-400 mt-0.5">From Rs. 18 / pc</div>
+                    <div className="text-[10px] text-slate-400 mt-0.5">Custom Sizing &amp; Print</div>
                   </button>
 
                   <button
@@ -189,7 +189,7 @@ export default function HeroBanner({ onExploreClick, onSelectCategory }: HeroBan
                     <div className="font-bold text-white group-hover:text-[#F88521] transition-colors">
                       Visiting Cards
                     </div>
-                    <div className="text-[10px] text-slate-400 mt-0.5">From Rs. 850 / 1000</div>
+                    <div className="text-[10px] text-slate-400 mt-0.5">Premium Textured Cards</div>
                   </button>
 
                   <button

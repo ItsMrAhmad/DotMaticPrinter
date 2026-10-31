@@ -190,7 +190,7 @@ export default function ShoppingPaperBagsPage() {
                     className="w-full flex items-center justify-center gap-2 bg-slate-900 hover:bg-[#F88521] text-white py-3 rounded-2xl font-bold text-xs sm:text-sm transition-all shadow-xs cursor-pointer"
                   >
                     <MessageCircle className="w-4 h-4 fill-white" />
-                    <span>Inquire Bag Pricing</span>
+                    <span>Inquire Custom Quote</span>
                   </a>
                 </div>
               </div>

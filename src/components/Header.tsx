@@ -293,7 +293,7 @@ export default function Header({
                           {product.title}
                         </div>
                         <div className="text-xs text-slate-500 mt-0.5">
-                          {product.category} • From <span className="text-[#F88521] font-bold">{product.startingPrice}</span>
+                          {product.category} • <span className="text-slate-500 font-medium">MOQ: {product.moq}</span>
                         </div>
                       </div>
                       <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-[#2D3092] group-hover:translate-x-1 transition-all" />

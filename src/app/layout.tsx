@@ -68,7 +68,6 @@ export default function RootLayout({
     "@id": `https://${BUSINESS_INFO.domain}`,
     "url": `https://${BUSINESS_INFO.domain}`,
     "telephone": "+923155550809",
-    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Office #40, 2nd Floor, Al Latif Center, Main Boulevard, Gulberg",

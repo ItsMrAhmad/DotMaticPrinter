@@ -35,9 +35,8 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
     `• Quantity: ${quantity}\n` +
     `• Material: ${selectedMaterial}\n` +
     `• Finish: ${selectedFinish}\n` +
-    (customSize ? `• Custom Dimensions: ${customSize}\n` : "") +
-    `• Starting Price Reference: ${product.startingPrice}\n\n` +
-    `Please share pricing, die-line templates, and delivery time to my city.`
+    (customSize ? `• Custom Dimensions: ${customSize}\n\n` : "\n") +
+    `Please share die-line templates, custom quotation, and delivery time to my city.`
   );
 
   const whatsappUrl = `https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${inquiryMessage}`;
@@ -92,8 +91,8 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
           {/* Quick Specifications Strip */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs">
             <div>
-              <span className="text-slate-400 block text-[10px] uppercase font-bold">Starting Price</span>
-              <span className="font-black text-slate-900 text-sm">{product.startingPrice}</span>
+              <span className="text-slate-400 block text-[10px] uppercase font-bold">Pricing</span>
+              <span className="font-black text-[#2D3092] text-sm">Custom Quote</span>
             </div>
             <div>
               <span className="text-slate-400 block text-[10px] uppercase font-bold">Minimum Order (MOQ)</span>

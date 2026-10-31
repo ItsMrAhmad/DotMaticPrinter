@@ -12,7 +12,7 @@ interface ProductCardProps {
 export default function ProductCard({ product, onOpenDetails }: ProductCardProps) {
   // Pre-filled WhatsApp message
   const whatsappMessage = encodeURIComponent(
-    `Hello Dot Matic Printer! I am interested in *${product.title}* (${product.startingPrice}, MOQ: ${product.moq}). Please share quotation, custom sizing, and artwork requirements.`
+    `Hello Dot Matic Printer! I am interested in *${product.title}* (MOQ: ${product.moq}). Please share quotation, custom sizing, and artwork requirements.`
   );
 
   const whatsappUrl = `https://wa.me/${BUSINESS_INFO.whatsappRaw}?text=${whatsappMessage}`;
@@ -109,10 +109,10 @@ export default function ProductCard({ product, onOpenDetails }: ProductCardProps
         <div className="flex items-baseline justify-between pt-3">
           <div>
             <span className="text-[10px] text-slate-400 uppercase font-semibold block">
-              Estimated Pricing
+              Pricing
             </span>
-            <span className="text-base font-black text-slate-900">
-              {product.startingPrice}
+            <span className="text-sm font-black text-[#2D3092]">
+              Custom Quote
             </span>
           </div>
           <button

@@ -85,17 +85,6 @@ export default async function ProductDetailPage({
       ratingValue: product.rating,
       reviewCount: product.reviewsCount,
     },
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "PKR",
-      lowPrice: product.startingPrice.replace(/[^0-9.]/g, "") || "100",
-      offerCount: "1000",
-      availability: "https://schema.org/InStock",
-      seller: {
-        "@type": "Organization",
-        name: "Dot Matic Printer",
-      },
-    },
   };
 
   const breadcrumbSchema = {
@@ -224,8 +213,8 @@ export default async function ProductDetailPage({
               {/* Key Commercial Metrics Strip */}
               <div className="p-5 rounded-2xl bg-[#F8F9FA] border border-slate-200 grid grid-cols-3 gap-4 text-xs">
                 <div>
-                  <div className="text-slate-500">Starting Price</div>
-                  <div className="text-base sm:text-lg font-black text-slate-900 mt-0.5">{product.startingPrice}</div>
+                  <div className="text-slate-500">Pricing Model</div>
+                  <div className="text-base sm:text-lg font-black text-slate-900 mt-0.5">Custom Quote</div>
                 </div>
                 <div>
                   <div className="text-slate-500">Minimum Quantity</div>
@@ -295,7 +284,7 @@ export default async function ProductDetailPage({
                   </div>
                 </div>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  Send your required dimensions, estimated quantity, and logo for an immediate price estimate and die-line layout template.
+                  Send your required dimensions, estimated quantity, and logo for an immediate quotation and die-line layout template.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 pt-1">
                   <a
@@ -365,7 +354,7 @@ export default async function ProductDetailPage({
                       <h4 className="font-extrabold text-sm text-slate-900 group-hover:text-[#2D3092] transition-colors leading-snug">
                         {rel.title}
                       </h4>
-                      <div className="text-xs text-slate-500 mt-1">Starting from {rel.startingPrice}</div>
+                      <div className="text-xs text-[#2D3092] font-semibold mt-1">MOQ: {rel.moq}</div>
                     </div>
                   </Link>
                 );
