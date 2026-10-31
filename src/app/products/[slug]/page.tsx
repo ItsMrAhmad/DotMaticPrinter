@@ -9,9 +9,7 @@ import { BUSINESS_INFO, PRODUCTS, getProductImage } from "@/data/products";
 import { 
   Check, 
   MessageCircle, 
-  Star, 
-  ShieldCheck, 
-  Truck, 
+  Star,  
   Sparkles, 
   Clock, 
   Package, 
@@ -173,25 +171,6 @@ export default async function ProductDetailPage({
                   <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
                   <span>{product.rating}</span>
                   <span className="text-slate-500 font-normal">({product.reviewsCount} reviews)</span>
-                </div>
-              </div>
-
-              {/* 3 Quick Manufacturing Badges */}
-              <div className="grid grid-cols-3 gap-3 text-center text-xs">
-                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200">
-                  <Sparkles className="w-4 h-4 text-[#F88521] mx-auto mb-1" />
-                  <div className="font-bold text-slate-900">Free 3D Proof</div>
-                  <div className="text-[11px] text-slate-500">Before Printing</div>
-                </div>
-                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200">
-                  <ShieldCheck className="w-4 h-4 text-[#2D3092] mx-auto mb-1" />
-                  <div className="font-bold text-slate-900">Direct Factory</div>
-                  <div className="text-[11px] text-slate-500">Zero Middlemen</div>
-                </div>
-                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200">
-                  <Truck className="w-4 h-4 text-emerald-600 mx-auto mb-1" />
-                  <div className="font-bold text-slate-900">Nationwide</div>
-                  <div className="text-[11px] text-slate-500">Daily Dispatch</div>
                 </div>
               </div>
             </div>
