@@ -12,7 +12,7 @@ import { InstagramIcon, FacebookIcon, YouTubeIcon, TikTokIcon } from "@/componen
 import { BUSINESS_INFO, CATEGORIES } from "@/data/products";
 
 interface FooterProps {
-  onSelectCategory: (catId: string) => void;
+  onSelectCategory?: (catId: string) => void;
 }
 
 export default function Footer({ onSelectCategory }: FooterProps) {
@@ -96,37 +96,40 @@ export default function Footer({ onSelectCategory }: FooterProps) {
               Printing &amp; Packaging
             </h4>
             <ul className="space-y-2 text-xs">
-              {CATEGORIES.map((cat) => (
-                <li key={cat.id}>
-                  <a
-                    href={
-                      cat.id === "packaging-boxes" || cat.id === "packaging"
-                        ? "#packaging-solutions-section"
-                        : cat.id === "wedding"
-                        ? "#wedding-section"
-                        : "#business-customers-section"
-                    }
-                    onClick={() => onSelectCategory(cat.id)}
-                    className="text-slate-400 hover:text-[#F88521] transition-colors inline-block"
-                  >
-                    {cat.name}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link href="/packaging-boxes/" className="text-slate-400 hover:text-[#F88521] transition-colors inline-block">
+                  Custom Packaging &amp; Boxes
+                </Link>
+              </li>
+              <li>
+                <Link href="/wedding-cards/" className="text-slate-400 hover:text-[#F88521] transition-colors inline-block">
+                  Wedding &amp; Event Collection
+                </Link>
+              </li>
+              <li>
+                <Link href="/corporate-stationery/" className="text-slate-400 hover:text-[#F88521] transition-colors inline-block">
+                  Corporate Stationery &amp; Visiting Cards
+                </Link>
+              </li>
+              <li>
+                <Link href="/shopping-paper-bags/" className="text-slate-400 hover:text-[#F88521] transition-colors inline-block">
+                  Paper Bags &amp; Shopping Bags
+                </Link>
+              </li>
+              <li>
+                <Link href="/labels-stickers-merch/" className="text-slate-400 hover:text-[#F88521] transition-colors inline-block">
+                  Labels, Stickers &amp; Merch
+                </Link>
+              </li>
               <li className="pt-2 border-t border-slate-800">
-                <a href="#why-choose-us" className="text-slate-400 hover:text-[#F88521] transition-colors inline-block">
-                  Why Choose Us
-                </a>
+                <Link href="/about/" className="text-slate-400 hover:text-[#F88521] transition-colors inline-block">
+                  About Dot Matic Printer
+                </Link>
               </li>
               <li>
-                <a href="#reviews-section" className="text-slate-400 hover:text-[#F88521] transition-colors inline-block">
-                  Client Reviews
-                </a>
-              </li>
-              <li>
-                <a href="#faq-section" className="text-slate-400 hover:text-[#F88521] transition-colors inline-block">
-                  Frequently Asked Questions
-                </a>
+                <Link href="/contact/" className="text-slate-400 hover:text-[#F88521] transition-colors inline-block">
+                  Contact &amp; Workshop Location
+                </Link>
               </li>
             </ul>
           </div>

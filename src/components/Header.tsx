@@ -13,8 +13,8 @@ import {
   ChevronDown,
   ChevronRight, 
   Sparkles,
-  Clock,
-  Calendar
+  Clock,  Calendar,
+  ArrowRight
 } from "lucide-react";
 import { InstagramIcon, FacebookIcon, YouTubeIcon, TikTokIcon } from "@/components/SocialIcons";
 import { BUSINESS_INFO, PRODUCTS, Product } from "@/data/products";
@@ -56,11 +56,11 @@ export const NAV_SUB_ITEMS = {
 };
 
 interface HeaderProps {
-  activeCategory: string;
-  onSelectCategory: (catId: string) => void;
-  onOpenProductModal: (product: { title: string; image: string; category: string; desc?: string }) => void;
-  onOpenAbout: () => void;
-  onOpenAppointment: () => void;
+  activeCategory?: string;
+  onSelectCategory?: (catId: string) => void;
+  onOpenProductModal?: (product: { title: string; image: string; category: string; desc?: string }) => void;
+  onOpenAbout?: () => void;
+  onOpenAppointment?: () => void;
 }
 
 export default function Header({
@@ -131,7 +131,7 @@ export default function Header({
     }
 
     // Open product modal
-    onOpenProductModal({
+    onOpenProductModal?.({
       title: item.title,
       image: item.image,
       category: categoryName,
@@ -278,7 +278,7 @@ export default function Header({
                     <button
                       key={product.id}
                       onClick={() => {
-                        onOpenProductModal({
+                        onOpenProductModal?.({
                           title: product.title,
                           image: "/images/cat-business-cards.webp",
                           category: product.category,
@@ -312,13 +312,13 @@ export default function Header({
         {/* Header Right Actions */}
         <div className="flex items-center gap-2.5 sm:gap-3">
           {/* Quick Book Appointment CTA */}
-          <button
-            onClick={onOpenAppointment}
+          <Link
+            href="/contact/"
             className="hidden sm:inline-flex items-center gap-1.5 border-2 border-[#2D3092] text-[#2D3092] hover:bg-[#2D3092] hover:text-white px-3.5 py-2 rounded-full font-bold text-xs transition-all cursor-pointer active:scale-95 active:bg-[#F88521] active:text-white shrink-0"
           >
             <Calendar className="w-3.5 h-3.5" />
             <span>Book Visit</span>
-          </button>
+          </Link>
 
           {/* WhatsApp CTA Button */}
           <a
@@ -354,12 +354,12 @@ export default function Header({
           <div className="flex items-center justify-center space-x-8 lg:space-x-12 py-3">
             
             {/* 1. About Us */}
-            <button
-              onClick={onOpenAbout}
+            <Link
+              href="/about/"
               className="font-bold text-[15px] lg:text-base text-slate-900 hover:text-[#2D3092] active:text-[#F88521] transition-all cursor-pointer py-1.5 active:scale-95 whitespace-nowrap"
             >
               About Us
-            </button>
+            </Link>
 
             {/* 2. Business Corporate ▾ */}
             <div 
@@ -413,6 +413,9 @@ export default function Header({
                       </div>
                     </button>
                   ))}
+                <div className="col-span-2 pt-2 border-t border-slate-100 text-center">
+                    <Link href="/corporate-stationery/" className="text-xs font-bold text-[#2D3092] hover:text-[#F88521] transition-colors inline-flex items-center gap-1 py-1"><span>Explore All Corporate Stationery</span><ArrowRight className="w-3.5 h-3.5" /></Link>
+                  </div>
                 </div>
               )}
             </div>
@@ -469,6 +472,9 @@ export default function Header({
                       </div>
                     </button>
                   ))}
+                <div className="col-span-2 pt-2 border-t border-slate-100 text-center">
+                    <Link href="/wedding-cards/" className="text-xs font-bold text-[#2D3092] hover:text-[#F88521] transition-colors inline-flex items-center gap-1 py-1"><span>Explore Full Wedding Collection</span><ArrowRight className="w-3.5 h-3.5" /></Link>
+                  </div>
                 </div>
               )}
             </div>
@@ -523,17 +529,20 @@ export default function Header({
                       </span>
                     </button>
                   ))}
+                <div className="pt-2 border-t border-slate-100 text-center">
+                    <Link href="/packaging-boxes/" className="text-xs font-bold text-[#2D3092] hover:text-[#F88521] transition-colors inline-flex items-center gap-1 py-1"><span>Explore All Packaging Boxes</span><ArrowRight className="w-3.5 h-3.5" /></Link>
+                  </div>
                 </div>
               )}
             </div>
 
             {/* 5. Book an Appointment */}
-            <button
-              onClick={onOpenAppointment}
+            <Link
+              href="/contact/"
               className="font-bold text-[15px] lg:text-base text-slate-900 hover:text-[#2D3092] active:text-[#F88521] transition-all cursor-pointer py-1.5 active:scale-95 whitespace-nowrap"
             >
-              Book an Appointment
-            </button>
+              Contact &amp; Visit
+            </Link>
 
           </div>
         </div>
@@ -557,16 +566,14 @@ export default function Header({
           {/* Navigation Items (Accordion Style) */}
           <div className="space-y-1.5 pt-1">
             {/* About Us */}
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenAbout();
-              }}
+            <Link
+              href="/about/"
+              onClick={() => setMobileMenuOpen(false)}
               className="w-full text-left px-3 py-2.5 rounded-xl font-bold text-sm text-slate-900 hover:bg-slate-50 active:bg-blue-50 active:text-[#2D3092] flex items-center justify-between cursor-pointer"
             >
               <span>About Us</span>
               <ChevronRight className="w-4 h-4 text-slate-400" />
-            </button>
+            </Link>
 
             {/* Business Corporate Expandable */}
             <div className="rounded-xl border border-slate-100 overflow-hidden">
@@ -644,16 +651,14 @@ export default function Header({
             </div>
 
             {/* Book an Appointment */}
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenAppointment();
-              }}
+            <Link
+              href="/contact/"
+              onClick={() => setMobileMenuOpen(false)}
               className="w-full text-left px-3 py-2.5 rounded-xl font-bold text-sm text-slate-900 hover:bg-slate-50 active:bg-blue-50 active:text-[#2D3092] flex items-center justify-between cursor-pointer"
             >
-              <span className="text-[#2D3092]">Book an Appointment</span>
+              <span className="text-[#2D3092]">Contact &amp; Visit</span>
               <Calendar className="w-4 h-4 text-[#2D3092]" />
-            </button>
+            </Link>
           </div>
 
           {/* Quick Contact Links in Mobile */}
